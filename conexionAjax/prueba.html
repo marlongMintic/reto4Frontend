@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>prueba</h1>
+    <script>
+        let ajax = $.ajax({
+            method:"POST",
+            url:"http://129.151.118.47:8080/api/Client/save",
+            dataType : 'json',
+            data:{
+                name:"marlong",
+                email:"marlngyes@gmialcom",
+                password:"marlong123",
+                age:17
+            }
+        })
+        ajax.done(function(x){
+            console.log(x);
+            console.log("funciona");
+        })
+        ajax.fail(function(x){
+            console.log(x);
+            console.log("no functiona");
+        })
+        /* fetch("http://129.151.118.47:8080/api/Client/save")
+        .then(x => x.json())
+        .then(x => console.log(x))
+        .catch(x => console.log(x)) */
+
+
+    </script>
+</body>
+</html>
